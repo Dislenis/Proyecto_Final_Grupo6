@@ -1,0 +1,89 @@
+
+
+.mapa{
+  margin: 50px;
+}
+.map{
+
+  min-width: 438px;
+  max-width: 150%;
+  
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2rem 2rem;
+ 
+  border-radius: 2.5rem;
+  background-color: #5c7a92;
+  box-shadow: 13px 13px 20px #737475, -13px -13px 20px #ffffff;
+  color: black;
+  margin-left: 1cm;
+  
+}
+.logo{
+  width: 250px; height: 100px;
+}
+body{
+  text-align: center;
+  font-size: 1.5em;
+
+  background-size: 40% 80%; 
+  font-size: 180%;
+  
+}
+.container1{
+  font-size: 180%;
+}
+
+
+button{ margin: 5px;
+  font-size: 80%; } 
+
+  .card-deck{
+  
+  margin: 0px auto;
+  padding: 3rem 3rem;
+  margin: auto;
+  border-radius: 5.0rem;
+ } 
+
+ .card-text {
+  font: icon;
+ }
+
+body {
+font-size: 180%;
+
+}
+
+
+.nav-link{
+  
+color: black;
+
+
+}
+
+.card-group{
+ margin:100px;
+}
+.card-deck{
+margin:60px;
+}
+
+body {
+font-size: 180%;
+}
+.navar{
+width: 80px; height: 50px;
+}
+.btn{
+border-radius: 1.5rem;
+
+}
+
+.nav-link{
+  
+color: black;
+
+
+}
+

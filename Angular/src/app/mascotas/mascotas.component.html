@@ -1,0 +1,147 @@
+<div class="item1">
+  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+      <img class="navar" src="../../assets/logo.jpg" alt="">
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+         
+ <button type="button" class="btn btn-light"><a class="nav-link" href="acceso">Nuestra galería</a></button>
+ <button type="button" class="btn btn-light"><a class="nav-link" href="misDatos">Mis datos</a></button>
+ <button type="button" class="btn btn-light"><a class="nav-link" href="nosotros">Nosotros</a></button> 
+ <button type="button" class="btn btn-light"><a class="nav-link" href="sugerencia">Contacto</a></button>
+ <form class="form-inline mt-2 mt-md-0">
+  <button (click)="registraMascota();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Registra tu mascota</button>
+  <button style="position: absolute; right: 0;" (click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+  
+</form>
+      </div>
+  </nav>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 class="display-4">Selecciona tu búsqueda</h1>
+      <hr class="bg-info">
+      <h5 class="pb-0 mb-0 text-dark alert alert-dismissible alert-info">Te invitamos a automatizar tu búsqueda para encontar un/a nuevo compañero/a de forma más optima</h5>
+      <br>
+<div class="form-group">
+  <label for="inputState">Region</label>
+  <select id="inputState" class="form-control"  method="post" required [(ngModel)]="Region" (change)="buscarid()">
+    <option *ngFor="let regiones of myRegion" [ngValue]="regiones.id">{{regiones.region}}</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="inputState">Comuna</label>
+  <select id="inputState" class="form-control" method="post" required [(ngModel)]="Comuna" [(ngModel)]="id_Comunas">
+    <option *ngFor="let comuna of myComuna" value="{{comuna.id}}">{{comuna.comuna}}</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="inputState">Sexo</label>
+  <select id="inputState" class="form-control"  method="post" required [(ngModel)]="Sexo">
+    <option>Hembra</option>
+          <option>Macho</option>
+          <option>No especifica</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="inputState">Estatura mascota</label>
+  <select id="inputState" class="form-control"   method="post" required [(ngModel)]="Estatura">
+    <option>Pequeño</option>
+    <option>Mediano</option>
+    <option>Grande</option>
+  </select>
+</div>
+<div class="form-group">
+        <button (click)="busquedaMascota()" style="justify-content: center;" type="button" class="btn btn-info btn-lg">Enviar búsqueda</button>
+    </div>
+  </div>
+      <div class="col-md-3">
+        <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+        <img class="img-responsive" src="/assets/mascota9.jpg" width="350" height="700" style="-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;padding:0px" >
+        </div>
+        </div>
+        <br>
+        <br>
+        <br>
+      
+      <hr/>
+
+
+
+
+
+
+
+
+
+    <div *ngIf="largo===1; else busqueda">
+      <div class="container perfil" *ngFor="let busqueda of miMascota">
+        <div class="container-fluid bg-1 text-center">
+            <img src="../../assets/{{busqueda.imagen}}" class="img-circle" alt="{{busqueda.descripcion}}" width="350" height="350">
+        </div>
+          
+          <div class="container-fluid bg-2 text-center p-5">
+            <h3>¿Quien soy yo?</h3>
+           <p><strong>{{busqueda.descripcion}}</strong></p>
+            <p><strong>Mi nombre es: {{busqueda.nombre}}</strong></p>
+            <p><strong>Mi tamaño es: {{busqueda.estatura}}</strong></p>
+            <p><strong>Mi sexo es: {{busqueda.sexo}}</strong></p>
+      
+      
+            <a class="btn btn-light ml-3" role="button" aria-pressed="true" data-toggle="collapse" (click)="adoptame(busqueda.id)" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Adoptame!</a>
+            
+           
+          </div>
+        
+         
+      
+        </div>
+
+  </div>
+  
+  <ng-template #busqueda>
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+          <div class="row" >
+              <div class="col-md-4" *ngFor="let busqueda of miMascota">
+                  <div class="card mb-4 shadow-sm">
+                      <img class="img-responsive" src="../../assets/{{busqueda.imagen}}">
+                      <div class="card-body">
+                          <p class="card-text"><strong>Mi nombre es: </strong>{{busqueda.nombre}}</p>
+                          <p class="card-text"><strong>De estatura: </strong>{{busqueda.estatura}}</p>
+                          <p class="card-text"><strong>Mi sexo es: </strong>{{busqueda.sexo}}</p>
+                          <p class="card-text">{{busqueda.descripcion}}</p>
+                          
+                          <button (click)="adoptame(busqueda.id)" type="button" class="btn btn-info">¡Adoptame!</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </ng-template>
+
+    

@@ -1,0 +1,142 @@
+<body>
+    <div class="item1">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <img class="navar" src="../../assets/logo.jpg" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <button type="button" class="btn btn-light"><a class="nav-link" href="acceso">Nuestra galería</a></button> 
+                <button type="button" class="btn btn-light"><a class="nav-link" href="mascotas">Búsqueda Mascota</a></button>
+                <button type="button" class="btn btn-light"><a class="nav-link" href="misDatos">Mis datos</a></button>
+                <button type="button" class="btn btn-light"><a class="nav-link" href="sugerencia">Contacto</a></button> 
+       <form class="form-inline mt-2 mt-md-0">
+        <button (click)="registraMascota();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Registra tu mascota</button>
+        <button style="position: absolute; right: 0;" (click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+        
+      </form>
+            </div>
+        </nav>
+      </div>
+    <br>
+   
+    
+    <div class="card-group">
+        <div class="card">
+            <div align="center">
+            <img class="img-responsive" src="/assets/logo.jpg" width="350" height="700" style="-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;padding:0px" >
+        </div>
+            <div class="card-body">
+            <h2 class="card-title" style="text-align: center;">¡TuMascota!</h2>
+            <p class="card-text" style="text-align: justify;">Somos una empresa dedicada al cuidado de mascotas que se encuentran en la calle, la damos en
+                adopcion
+                a personas que en verdad se comprometan a cuidarlas, cada mascota la ponemos en control para su
+                cuidado de acuerdo a la especie.</p>
+           
+          </div>
+        </div>
+        <div class="card">
+            
+            
+            <div class="map">
+            <div align="center">
+            <iframe  class="img-responsive" width="800" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                                id="gmap_canvas"
+                                src="https://maps.google.com/maps?width=807&amp;height=438&amp;hl=en&amp;q=%20Irarr%C3%A1zaval%203665,%20%C3%91u%C3%B1oa,%20Regi%C3%B3n%20Metropolitana%20santiago+(TuMascota)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                            <a href='https://www.symptoma.es/es/info/covid-19'></a>
+                            <script type='text/javascript'
+                                src='https://maps-generator.com/google-maps-authorization/script.js?id=85d807b0ce6617110da3262c6f37197a00614fa5'></script>
+                            </div>
+                        </div>
+                        <br>
+                                <div class="card-body">
+                                    <h2 style="text-align: center;">Estamos ubicados en:</h2>
+            <p class="card-text" style="text-align: center;">Irarrázaval 3665, Ñuñoa, Region Metropolitana</p>
+         
+          </div>
+        </div>
+       
+    
+      </div>
+    <div class="card-deck">
+        <div class="card text-white bg-info">
+            <img src="../../assets/dislenis.jpg" class="card-img-top" width="220" height="220">
+            <div class="card-body">
+                <p style="text-align:center" class="card-text">"Soy veterinaria hace 5 años y hace 1 programadora, pero
+                    mi amor por los animales es de toda una vida, así que desde pequeña supe que era mi vocación y junto
+                    a mis compañeros comenzamos con la idea de esta organización que solo busca la felicidad de ellos,
+                    espero también tengas mucho amor que entregarles".</p>
+    
+    
+                <hr />
+                <p style="text-align:center">Dislenis Robles</p>
+            </div>
+        </div>
+        <div class="card bg-light border-dark">
+            <img src="../../assets/guille.jpg" class="card-img-top" width="220" height="220">
+            <div class="card-body">
+                <p style="text-align:center" class="card-text">"Soy un programador amante de los animales, así que no
+                    dude ni un segundo cuando mis compañeros me invitaron a formar parte de este lindo proyecto,
+                    ¡esperamos juntos ayudar!".</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <hr />
+                <p style="text-align:center">Guillermo Araujo</p>
+    
+            </div>
+        </div>
+        <div class="card text-white bg-info">
+            <img src="../../assets/carla.jpg" class="card-img-top" width="220" height="220">
+            <div class="card-body">
+                <p style="text-align:center" class="card-text">"Actualmente me dedico a la programación, pero desde
+                    pequeña que amo los animales y poder salir en ayuda de ellos, así que junto a mis compañeros creamos
+                    esta hermosa organización que busca poder contribuir a su felidad, ¡espero tú también seas parte!".
+                </p>
+                <br>
+                <hr />
+                <p style="text-align:center">Carla Arroyo</p>
+            </div>
+    
+        </div>
+        <div class="card bg-light border-dark">
+            <img src="../../assets/benjamin.jpg" class="card-img-top" width="220" height="220">
+            <div class="card-body">
+                <p style="text-align:center" class="card-text">Soy programador hace 3 años, y siempre eh tenieo un amor
+                    incondicional hacia los animales, la responsabilidad afectiva hacia ellos es uno de mis principales
+                    fuertes, este sitio fue ideado para personas que consideran a la mascota como una compañera y no una
+                    posesión material.</p>
+                <br>
+                <br>
+                <hr />
+                <p style="text-align:center">Benjamín Navarrete</p>
+            </div>
+        </div>
+        <div class="card text-white bg-info">
+            <img src="../../assets/elizabet.jpg" class="card-img-top" width="220" height="220">
+            <div class="card-body">
+                <p class="card-text">Soy una apasionada por los animales, su bienestar y compañía, es por eso que esta
+                    organización es muy importante para mi y espero que una oportunidad para ti!, ya que aquí quizás podrás
+                    encontrar a tu mejor amigo y cambiar su vida.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+    
+                <div style="text-align:center" class="card-footer bg-transparent border-light">Elizabeth Ovalle</div>
+            </div>
+    
+        </div>
+    </div>
+    </body>
+    <footer class="text-muted">
+        <div class="container">
+    
+            <p>2020-2020 Derechos reservados C.A</p>
+            <p>Irarrázaval 3665, Ñuñoa - Santiago de Chile, Teléfono (56-9) 4966 59 89<a
+                    href="https://getbootstrap.com/"></a><a href="/docs/4.5/getting-started/introduction/"></a>.</p>
+        </div>
+    </footer>

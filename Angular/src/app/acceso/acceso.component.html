@@ -1,0 +1,78 @@
+<body>
+    <div class="item1">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <img class="navar" src="../../assets/logo.jpg" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+               
+       <button type="button" class="btn btn-light"><a class="nav-link" href="mascotas">Búsqueda Mascota</a></button>
+       <button type="button" class="btn btn-light"><a class="nav-link" href="misDatos">Mis datos</a></button>
+       <button type="button" class="btn btn-light"><a class="nav-link" href="nosotros">Nosotros</a></button> 
+       <button type="button" class="btn btn-light"><a class="nav-link" href="sugerencia">Contacto</a></button> 
+       <form class="form-inline mt-2 mt-md-0">
+         <button (click)="registraMascota();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Registra tu mascota para la adopción</button>
+         <button style="position: absolute; right: 0;"(click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+    </form>
+</div>
+</nav>
+</div>
+<div class="col">
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<div class="container">
+    <div class="container-fluid bg-1 text-center">
+        <h3>¿Quien soy?</h3>
+        <img src="../../assets/huron.jpg" class="img-circle" alt="Bird" width="350" height="350">
+        <h3>Soy un aventurero</h3>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+
+            <div class="carousel-inner" >
+                <div class="item {{valor.active}}" *ngFor="let valor of carrusel">
+                    <img class="carrusel" src="../../assets/{{valor.imagen}}" >
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="album py-5 bg-light">
+    <div class="container">
+
+        <div class="row" >
+            <div class="col-md-4" *ngFor="let Mascota of myMascota">
+                <div class="card mb-4 shadow-sm">
+                    <img class="img-responsive" src="../../assets/{{Mascota.imagen}}">
+                    <div class="card-body">
+                        <p class="card-text"><strong>Mi nombre es: </strong> {{Mascota.nombre}}</p>
+                        <p class="card-text"><strong>Mi estatura es: </strong>{{Mascota.estatura}}</p>
+                        <p class="card-text"><strong>Mi edad es: </strong>{{Mascota.edad}}</p>
+                        <p class="card-text">{{Mascota.descripcion}}</p>
+                        <button (click)="adoptame(Mascota.id)" type="button" class="btn btn-info">¡Adoptame!</button>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>      
+ 

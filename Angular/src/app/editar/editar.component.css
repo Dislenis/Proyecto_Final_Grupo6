@@ -1,0 +1,56 @@
+
+body {
+  font-size: 180%;
+}
+.navar{
+  width: 80px; height: 50px;
+}
+.btn{
+  border-radius: 1.5rem;
+  
+}
+
+.nav-link{
+    
+  color: black;
+  
+
+ }
+
+
+ .bg-1 { 
+  background-color: #17cfcf;
+  color: #ffffff;
+  background-image: url("../../assets/fondoPatita.jpg");
+  background-size:100%;
+  ;
+}
+
+
+.bg-2 { 
+  background-color: #099287;
+  color: #ffffff;
+}
+
+.bg-3 { 
+  background-color: #075361;
+  color :#ffffff;
+}
+
+.container-fluid {
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+
+.container perfil{
+  margin-top:100px;
+  padding:10px;
+  width:170%;
+  font-size:170%;
+}
+
+
+.password{
+  font-size: medium;
+  color: black;
+}

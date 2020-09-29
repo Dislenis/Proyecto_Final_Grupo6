@@ -1,0 +1,71 @@
+<p>tablamascotas works!</p>
+<body>
+    <div class="item1">
+       <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+           <img class="navar" src="../../assets/logo.jpg" alt="">
+           <button class="navbar-toggler" type="button" data-toggle="collapse"
+               data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+               aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarCollapse">
+              
+      <button type="button" class="btn btn-light"><a class="nav-link" href="table">Usuarios registrados</a></button>
+      <button type="button" class="btn btn-light"><a class="nav-link" href="tablaadopciones">Adopciones registradas</a></button>
+      <button type="button" class="btn btn-light"><a class="nav-link" href="tablasugerencia">Sugerencias</a></button> 
+      
+      <form class="form-inline mt-2 mt-md-0">
+       
+       <button style="position: absolute; right: 0;" (click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+       
+     </form>
+           </div>
+       </nav>
+     </div>
+   </body>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Mascotas registrados</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td style="text-align:center" scope="col">ID</td>
+                        <th class="table-primary" style="text-align:center" scope="col">NOMBRE</th>
+                        <th style="text-align:center" scope="col">ESTATURA</th>
+                        <th style="text-align:center" scope="col">EDAD</th>
+                        <th class="table-primary" style="text-align:center" scope="col">SEXO</th>
+                        <th style="text-align:center" scope="col">REGIÓN</th>
+                        <th style="text-align:center" scope="col">COMUNA</th>
+                        <th style="text-align:center" scope="col">IMAGEN</th>
+                        <th style="text-align:center" scope="col">DESCRIPCIÓN</th>
+                    </tr>
+                </thead>
+
+                <tbody>      
+                    <tr *ngFor="let mascotas of miMascota">
+                         <td style="text-align:center">{{mascotas.id}}</td>
+                          <td class="table-primary" style="text-align:center">{{mascotas.nombre}}</td>
+                          <td style="text-align:center">{{mascotas.estatura}}</td>
+                          <td style="text-align:center">{{mascotas.edad}}</td>
+                          <td class="table-primary" style="text-align:center">{{mascotas.sexo}}</td>
+                          <td style="text-align:center">{{mascotas.region}}</td>
+                          <td style="text-align:center">{{mascotas.comuna}}</td>
+                          <td style="text-align:center">{{mascotas.imagen}}</td>
+                          <td style="text-align:center">{{mascotas.descripcion}}</td>
+                          <td style="text-align:center"><button class="btn btn-primary" (click)= "eliminarMascota(mascotas.id);">Eliminar</button> </td>
+                        
+                    </tr>
+                  </tbody>
+                </table>
+    </div>
+</div>
+</div>

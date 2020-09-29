@@ -1,0 +1,96 @@
+<div class="item1">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+        <img class="navar" src="../../assets/logo.jpg" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+           
+   <button type="button" class="btn btn-light"><a class="nav-link" href="acceso">Nuestra galería</a></button>
+   <button type="button" class="btn btn-light"><a class="nav-link" href="mascotas">Búsqueda mascota</a></button>
+   <button type="button" class="btn btn-light"><a class="nav-link" href="misDatos">Mis datos</a></button>
+   <button type="button" class="btn btn-light"><a class="nav-link" href="mascotas">Búsqueda mascota</a></button>
+   <button type="button" class="btn btn-light"><a class="nav-link" href="nosotros">Nosotros</a></button>
+   <button type="button" class="btn btn-light"><a class="nav-link" href="sugerencia">Contacto</a></button> 
+   <form class="form-inline mt-2 mt-md-0">
+    <button style="position: absolute; right: 0;" (click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+    
+  </form>
+        </div>
+    </nav>
+  </div>
+<div class="register">
+    <div class="custom-form" method="post">
+        <div class="row no-gutters">
+            <div class="col-sm-6 col-md-8">
+                <br>
+                <h1>Registro de mascota <img class="images" src="assets/fondo2.jpg" width="70" height="60"></h1>
+                <br>
+                <h4>¡Estás a un paso de cambiarle la vida a un animalito!</h4>
+            </div>
+        </div>
+        <hr />
+        <br>
+        <br>
+        <label for="inputState">Nombre de la mascota  <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-heart" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+        </svg></label>
+        <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Introduzca el nombre aquí" required="required" />
+        <label for="inputState">Estatura de la mascota</label>
+        <select class="custom-form" method="post" required [(ngModel)]="Estatura">"
+            <option selected disabled value="">Tamaño</option>
+            <option>Pequeño</option>
+            <option>Mediano</option>
+            <option>Grande</option>
+        </select>
+        <label for="inputState">Edad de la mascota <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-hourglass-split" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0c0 .701.478 1.236 1.011 1.492A3.5 3.5 0 0 1 11.5 13s-.866-1.299-3-1.48V8.35z"/>
+        </svg></label>
+        <input type="text" [(ngModel)]="edad" name="edad" placeholder="Introduzca la edad aquí" required="required" />
+        <label for="inputState">Sexo de la mascota  <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-flower3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M11.424 8c.437-.052.811-.136 1.04-.268a2 2 0 0 0-2-3.464c-.229.132-.489.414-.752.767C9.886 4.63 10 4.264 10 4a2 2 0 1 0-4 0c0 .264.114.63.288 1.035-.263-.353-.523-.635-.752-.767a2 2 0 0 0-2 3.464c.229.132.603.216 1.04.268-.437.052-.811.136-1.04.268a2 2 0 1 0 2 3.464c.229-.132.489-.414.752-.767C6.114 11.37 6 11.736 6 12a2 2 0 1 0 4 0c0-.264-.114-.63-.288-1.035.263.353.523.635.752.767a2 2 0 1 0 2-3.464c-.229-.132-.603-.216-1.04-.268zM9 4a1 1 0 0 0-2 0 1.473 1.473 0 0 0 .045.206c.039.131.1.294.183.483.166.378.396.808.637 1.223l.135.23.135-.23c.241-.415.47-.845.637-1.223.083-.19.144-.352.183-.484.02-.065.031-.116.038-.154C9 4.018 9 4.002 9 4zM3.67 5.5a1 1 0 0 0 .366 1.366 1.47 1.47 0 0 0 .2.064c.134.032.305.06.51.083.411.045.898.061 1.379.06.09 0 .178 0 .266-.002a21.82 21.82 0 0 0-.131-.232 12.88 12.88 0 0 0-.742-1.163 4.215 4.215 0 0 0-.327-.4 1.472 1.472 0 0 0-.115-.11c-.025-.022-.038-.03-.04-.032A1 1 0 0 0 3.67 5.5zm1.366 5.366a1 1 0 0 1-1-1.732c.001 0 .016-.008.047-.02.037-.013.087-.028.153-.044.134-.032.305-.06.51-.083a12.88 12.88 0 0 1 1.379-.06c.09 0 .178 0 .266.002a21.82 21.82 0 0 1-.131.232c-.24.416-.497.83-.742 1.163a4.1 4.1 0 0 1-.327.4 1.483 1.483 0 0 1-.155.142zM9 12a1 1 0 0 1-2 0 1.476 1.476 0 0 1 .045-.206c.039-.131.1-.294.183-.483.166-.378.396-.808.637-1.223L8 9.858l.135.23c.241.415.47.845.637 1.223.083.19.144.352.183.484A1.338 1.338 0 0 1 9 12zm3.33-6.5a1 1 0 0 1-.366 1.366 1.478 1.478 0 0 1-.2.064c-.134.032-.305.06-.51.083-.412.045-.898.061-1.379.06-.09 0-.178 0-.266-.002l.131-.232c.24-.416.497-.83.742-1.163a4.1 4.1 0 0 1 .327-.4c.046-.05.085-.086.114-.11.026-.022.04-.03.041-.032a1 1 0 0 1 1.366.366zm-1.366 5.366a1 1 0 0 0 1-1.732c-.002 0-.016-.008-.047-.02a1.478 1.478 0 0 0-.153-.044 4.217 4.217 0 0 0-.51-.083 12.881 12.881 0 0 0-1.379-.06c-.09 0-.178 0-.266.002a22 22 0 0 0 .131.232c.24.416.497.83.742 1.163.122.167.232.3.327.4a1.494 1.494 0 0 0 .155.142zM8 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg></label>
+        <select class="custom-form" method="post" required [(ngModel)]="sexo">"
+            <option selected disabled>Sexo</option>
+            <option>Hembra</option>
+            <option>Macho</option>
+            <option>No especifica</option>
+        </select>
+        <label for="inputState">Región donde se encuentra <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-geo-alt-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        </svg></label>
+        <select name="listaRegion" id="regiones" class="custom-form" method="post" required [(ngModel)]="Region"
+      (change)="buscarid()">
+      <option selected disabled>Region</option>
+      <option *ngFor="let regiones of myRegion" [ngValue]="regiones.id">{{regiones.region}}</option>
+
+    </select>
+          <label for="inputState">Comuna <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-geo-alt-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          </svg></label>
+          <select class="custom-form" method="post" required [(ngModel)]="comuna" [(ngModel)]="id_Comunas">
+            <option selected disabled>Comuna</option>
+      
+            <option *ngFor="let comuna of myComuna" value="{{comuna.id}}">{{comuna.comuna}}</option>
+      
+          </select>
+            
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Subir foto de mi mascota <svg width="1.5em" height="1.5em" viewBox="0 0 17 16" class="bi bi-image" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M14.002 2h-12a1 1 0 0 0-1 1v9l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094L15.002 9.5V3a1 1 0 0 0-1-1zm-12-1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm4 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                  </svg></label>
+                  <input type="file"  (change)="cargarImagen($event)" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+              
+                
+                <label for="exampleFormControlFile1">Descripción de mi mascota <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+                </svg></label>  
+        <input type="text" [(ngModel)]="descripcion" name="descripcion" placeholder="Introduzca una descripción aquí" required="required" />
+        <button (click)="crear($event)" class="btn btn-primary" type="submit">Registrar <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-hand-index-thumb" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M6.75 1a.75.75 0 0 0-.75.75V9.5a.5.5 0 0 1-.854.354l-2.41-2.411a.517.517 0 0 0-.809.631l2.512 4.185 1.232 2.465a.5.5 0 0 0 .447.276h6.302a.5.5 0 0 0 .434-.252l1.395-2.442a2.5 2.5 0 0 0 .317-.991l.272-2.715a1 1 0 0 0-.995-1.1H13.5v1a.5.5 0 1 1-1 0V7.154a4.208 4.208 0 0 0-.2-.26c-.187-.222-.368-.383-.486-.43-.124-.05-.392-.063-.708-.039a4.844 4.844 0 0 0-.106.01V8a.5.5 0 1 1-1 0V5.986c0-.167-.073-.272-.15-.314a1.657 1.657 0 0 0-.448-.182c-.179-.035-.5-.04-.816-.027l-.086.004V8a.5.5 0 1 1-1 0V1.75A.75.75 0 0 0 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.272-2.715a2 2 0 0 0-1.99-2.199h-.582a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.634 2.634 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"/>
+        </svg></button>
+        </div>
+        </div>

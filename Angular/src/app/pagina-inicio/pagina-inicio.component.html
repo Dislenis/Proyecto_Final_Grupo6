@@ -1,0 +1,96 @@
+<body>
+    <div class="item1">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <img class="navar" src="../../assets/logo.jpg" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+               
+       <button type="button" class="btn btn-light"><a class="nav-link" href="#">Inicio</a></button>
+       <button type="button" class="btn btn-light"><a class="nav-link" href="registro">Registrarme</a></button>
+     
+      
+            </div>
+        </nav>
+      </div>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <h1 class="display-4">Inicia sesión</h1>
+                    <input type="email" name="email" placeholder="Correo usuario" required="required" [(ngModel)]="correo"/>
+                    <input type="password" name="password" placeholder="Contraseña" required="required" [(ngModel)]="password" />
+                    <button (click)="ingresar()" type="button" class="btn btn-info">Acceder</button><br />
+                    <hr />
+                    <button (click)="registrar()" class="registrar" type="button" class="btn btn-info">Registrar</button>
+                    <button (click)="olvidoPassword()" class="olvido" type="button" class="btn btn-info">¿Olvido su contraseña?</button>
+    
+    
+                </div>
+    
+                <div class="col">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+    
+                    <img class="logo" src="../../assets/logo.jpg" alt="">
+                </div>
+    
+            </div>
+    
+        </div>
+        <br />
+    
+    
+        <div class="container">
+            <div class="container-fluid bg-1 text-center">
+                <h3>¿Quien soy?</h3>
+                <img src="../../assets/perro.jpg" class="img-circle" alt="Bird" width="350" height="350">
+                <h3>Soy un aventurero</h3>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    
+    
+                    <div class="carousel-inner" >
+                        <div class="item {{valor.active}}" *ngFor="let valor of carrusel">
+                            <img class="carrusel" src="../../assets/{{valor.imagen}}" >
+                        </div>
+                    </div>
+    
+    
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="album py-5 bg-light">
+            <div class="container">
+    
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let Mascota of myMascota">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="img-responsive" src="../../assets/{{Mascota.imagen}}">
+                            <div class="card-body">
+                                <p class="card-text">{{Mascota.nombre}}</p>
+                                <p class="card-text">{{Mascota.descripcion}}</p>
+                                <span class="label label-info">Para conocerme más inicia sesión o registrate</span>
+    
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+    </body>

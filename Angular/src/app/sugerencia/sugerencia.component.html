@@ -1,0 +1,84 @@
+<body>
+    <div class="item1">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <img class="navar" src="../../assets/logo.jpg" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <button type="button" class="btn btn-light"><a class="nav-link" href="acceso">Nuestra galería</a></button>
+                <button type="button" class="btn btn-light"><a class="nav-link" href="mascotas">Búsqueda Mascota</a></button>
+                <button type="button" class="btn btn-light"><a class="nav-link" href="misDatos">Mis datos</a></button>
+                <button type="button" class="btn btn-light"><a class="nav-link" href="nosotros">Nosotros</a></button> 
+       <form class="form-inline mt-2 mt-md-0">
+        <button (click)="registraMascota();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Registra tu mascota</button>
+        <button style="position: absolute; right: 0;" (click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+        
+      </form>
+            </div>
+        </nav>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <form class="form-horizontal" method="post">
+                        <fieldset>
+                            <legend class="text-center header">Envíe su sugerencia, reclamo o felicitaciones</legend>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="fname" name="name" type="text" placeholder="Nombre" [(ngModel)]="nombre" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="lname" name="name" type="text" placeholder="Apellido" [(ngModel)]="apellido" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="email" name="email" type="text" placeholder="example@example.com" [(ngModel)]="correo" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <input id="phone" name="phone" type="text" placeholder="+56968144195" [(ngModel)]="telefono" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                                <div class="col-md-8">
+                                    <textarea class="form-control" id="message" name="message" placeholder="Escriba su mensaje aquí" [(ngModel)]="descripcion" rows="7"></textarea>
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <button (click)="crear()" type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>}
+    <br>
+    <br>
+    </body>
+    

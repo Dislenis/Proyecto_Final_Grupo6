@@ -1,0 +1,81 @@
+<body>
+    <div class="item1">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <img class="navar" src="../../assets/logo.jpg" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <button type="button" class="btn btn-light"><a class="nav-link" href="acceso">Nuestra galería</a></button>
+                <button type="button" class="btn btn-light"><a class="nav-link" href="mascotas">Búsqueda Mascota</a></button>
+                <button type="button" class="btn btn-light"><a class="nav-link" href="misDatos">Mis datos</a></button>
+                <button type="button" class="btn btn-light"><a class="nav-link" href="nosotros">Nosotros</a></button> 
+                <button type="button" class="btn btn-light"><a class="nav-link" href="sugerencia">Contacto</a></button> 
+       <form class="form-inline mt-2 mt-md-0">
+        <button (click)="registraMascota();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Registra tu mascota</button>
+        <button style="position: absolute; right: 0;" (click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+        
+      </form>
+            </div>
+        </nav>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+     
+      </body>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Solicitudes de Adopcion</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="table-primary">MASCOTA</th>
+                        <th>ESTATURA</th>
+                        <th>EDAD </th>
+                        <th>SEXO</th>
+                        <th class="table-primary">ADOPTANTE</th>
+                        <th class="table-primary">APELLIDO</th>
+                        <th>CORREO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let adp of adopcion" style="color:black">
+                    
+                        <td class="table-primary">{{adp.nombreMascota}}</td>
+                        <td>{{adp.estatura}}</td>
+                        <td>{{adp.edad}}</td>
+                        <td>{{adp.sexo}}</td>
+                        <td class="table-primary">{{adp.nombreUsuario}}</td>
+                        <td class="table-primary">{{adp.apellido}}</td>
+                        <td>{{adp.correo}}</td>
+                        <td style="text-align:center">
+                        <button class="btn btn-primary" (click)="aceptarSolicitud(adp.id)">Aceptar</button>
+                        <button class="btn btn-primary" (click)="eliminar(adp.id)">Rechazar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

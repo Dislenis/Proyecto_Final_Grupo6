@@ -1,0 +1,69 @@
+<p>tablaadopciones works!</p>
+<body>
+    <div class="item1">
+       <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+           <img class="navar" src="../../assets/logo.jpg" alt="">
+           <button class="navbar-toggler" type="button" data-toggle="collapse"
+               data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+               aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarCollapse">
+            <button type="button" class="btn btn-light"><a class="nav-link" href="table">Usuarios registrados</a></button>
+      <button type="button" class="btn btn-light"><a class="nav-link" href="tablamascotas">Mascotas registradas</a></button>
+
+      <button type="button" class="btn btn-light"><a class="nav-link" href="tablasugerencia">Sugerencias</a></button>  
+      <form class="form-inline mt-2 mt-md-0">
+       
+       <button style="position: absolute; right: 0;" (click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+       
+     </form>
+           </div>
+       </nav>
+     </div>
+   </body>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Adopciones en sistema</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td class="table-primary" style="text-align:center" scope="col">ID</td>
+                        <th style="text-align:center" scope="col">ID_MASCOTA</th>
+                        <th style="text-align:center" scope="col">ID_USUARIO</th>
+                        <th style="text-align:center" scope="col">ESTADO</th>
+                    </tr>
+                </thead>
+
+                <tbody>      
+                    <tr *ngFor="let adopcion of miAdopcion">
+                         <td class="table-primary" style="text-align:center">{{adopcion.id}}</td>
+                          <td style="text-align:center">{{adopcion.id_Mascota}}</td>
+                          <td style="text-align:center">{{adopcion.id_Usuario}}</td>
+                          <td style="text-align:center">{{adopcion.estado}}</td>
+                          <td style="text-align:center"><button class="btn btn-primary" (click)= "eliminarAdopcion(adopcion.id);">Eliminar</button> </td>
+                        
+                    </tr>
+                  </tbody>
+                </table>
+    </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

@@ -1,0 +1,72 @@
+<p>tablasugerencia works!</p>
+<body>
+    <div class="item1">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+            <img class="navar" src="../../assets/logo.jpg" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+               
+       <button type="button" class="btn btn-light"><a class="nav-link" href="table">Usuarios registrados</a></button>
+       <button type="button" class="btn btn-light"><a class="nav-link" href="tablamascotas">Mascotas registradas</a></button>
+       <button type="button" class="btn btn-light"><a class="nav-link" href="tablaadopciones">Adopciones registradas</a></button> 
+       <form class="form-inline mt-2 mt-md-0">
+        
+        <button style="position: absolute; right: 0;" (click)="cerrarSesion();" class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerrar sesión</button>
+        
+      </form>
+            </div>
+        </nav>
+      </div>
+    </body>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h3>Reclamos, sugerencias y felicitaciones</h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                           
+                            <th class="table-primary" style="text-align:center" scope="col">NOMBRE</th>
+                            <th class="table-primary" style="text-align:center" scope="col">APELLIDO</th>
+                            <th style="text-align:center" scope="col">CORREO</th>
+                            <th style="text-align:center" scope="col">TELÉFNO</th>
+                            <th style="text-align:center" scope="col">DESCRIPCIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody>      
+                        <tr *ngFor="let sugerencias of miSugerencia">
+                              <td class="table-primary" style="text-align:center">{{sugerencias.nombre}}</td>
+                              <td class="table-primary" style="text-align:center">{{sugerencias.apellido}}</td>
+                              <td style="text-align:center">{{sugerencias.correo}}</td>
+                              <td style="text-align:center">{{sugerencias.telefono}}</td>
+                              <td style="text-align:center">{{sugerencias.descripcion}}</td>
+                
+                              <td  (click)= "eliminar(sugerencias.correo);"style="text-align:center"><button class="btn btn-primary">Eliminar</button> </td>
+                            
+                        </tr>
+                      </tbody>
+                    </table>
+        </div>
+    </div>
+    </div>
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    
