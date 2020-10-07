@@ -20,8 +20,11 @@ public class UsuarioResource {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //GET PARA MOSTAR DATOS DE USUARIOS
     @RequestMapping(method = RequestMethod.GET)
-    public List<Usuario> obtenerUsuario() {
-        return UsuarioDAO.list();
+    public List<Usuario> obtenerUsuario(@RequestParam String nombre, @RequestParam String apellido) {
+        nombre = nombre.replace("%20", "");
+        apellido = apellido.replace("%20", ""); //reemplaza
+        System.out.println(apellido);
+        return UsuarioDAO.list(nombre, apellido);
     }
 
     //////////////////////////////////////ooo/////////////////////////////////////////////////////////////////////////////////

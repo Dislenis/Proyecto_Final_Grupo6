@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Usuario } from '../User/usuario'
 import { Router } from '@angular/router';
 import { UsuarioService } from '../servicios/usuario.service';
 import { Mascota } from '../User/mascota';
 import { MascotasComponent } from '../mascotas/mascotas.component';
-import { Carrusel } from '../User/carrusel'
+import { Carrusel } from '../User/carrusel';
+
 
 @Component({
   selector: 'app-pagina-inicio',
@@ -12,6 +13,8 @@ import { Carrusel } from '../User/carrusel'
   styleUrls: ['./pagina-inicio.component.css']
 })
 export class PaginaInicioComponent implements OnInit {
+
+  hide=true;
 
   myMascota: import("../User/mascota").Mascota[];
 
@@ -137,5 +140,23 @@ export class PaginaInicioComponent implements OnInit {
 
   olvidoPassword() {
     location.href = 'editar'
+  }
+
+  show = false;
+  
+ 
+ 
+  @ViewChild('showhideinput') input:ElementRef; ;
+  
+  toggleShow()
+    {
+      if(this.input.nativeElement.type=='text'){
+        this.input.nativeElement.type='password';
+      }else{
+        this.input.nativeElement.type='text';
+      }
+      
+    
+ 
   }
 }

@@ -2,7 +2,9 @@ package com.example.ProyectoFinal.TuMascotaResource;
 
 import com.example.ProyectoFinal.Service.CorreoService;
 import com.example.ProyectoFinal.TuMascota.Sugerencia;
+import com.example.ProyectoFinal.TuMascota.Usuario;
 import com.example.ProyectoFinal.TuMascotaDAO.SugerenciaDAO;
+import com.example.ProyectoFinal.TuMascotaDAO.UsuarioDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +23,10 @@ public class SugerenciaResource {
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //GET PARA MOSTAR DATOS DE USUARIOS
     @RequestMapping(method = RequestMethod.GET)
-    public List<Sugerencia> obtenersugerencia() {
-        return SugerenciaDAO.list();
+    public List<Sugerencia> obtenersugerencia(@RequestParam String nombre, @RequestParam String apellido) {
+        nombre = nombre.replace("%20", "");
+        apellido = apellido.replace("%20", ""); //reemplaza
+        return SugerenciaDAO.list(nombre, apellido);
     }
 
     //POST PARA CREAR SUGERENCIA

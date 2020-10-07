@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Usuario } from '../User/usuario'
 import { Region } from '../User/region'
 import { Comuna } from '../User/comuna'
 import { Provincia } from '../User/provincia'
 import { UsuarioService } from '../servicios/usuario.service'
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -17,11 +18,13 @@ export class RegistroComponent implements OnInit {
 
 
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private spinnerService: NgxSpinnerService) { }
 
+  public load: Boolean = false;
 
   ngOnInit(): void {
-    this.buscarRegion()
+    this.buscarRegion();
+    
   }
 
   ID: number;
@@ -82,6 +85,7 @@ export class RegistroComponent implements OnInit {
         console.log(err)
       }
     )
+    
 
 
 
@@ -117,6 +121,26 @@ export class RegistroComponent implements OnInit {
 
   }
 
+  spinner():void{
+    this.spinnerService.show();
+    setTimeout(() =>{
+      this.spinnerService.hide();
+    },4000);
+  }
 
-
+  show = false;
+  hide=true;
+  @ViewChild('showhideinput') input:ElementRef; ;
+  
+  toggleShow()
+    {
+      if(this.input.nativeElement.type=='text'){
+        this.input.nativeElement.type='password';
+      }else{
+        this.input.nativeElement.type='text';
+      }
+      
+    
+ 
+  }
 }

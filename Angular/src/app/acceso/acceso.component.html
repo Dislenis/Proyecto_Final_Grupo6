@@ -29,7 +29,7 @@
 <div class="container">
     <div class="container-fluid bg-1 text-center">
         <h3>¿Quien soy?</h3>
-        <img src="../../assets/huron.jpg" class="img-circle" alt="Bird" width="350" height="350">
+        <img src="../../assets/huron.jpg" class="img-circle responsive" alt="Bird" width="350" height="350">
         <h3>Soy un aventurero</h3>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -56,14 +56,15 @@
     <div class="container">
 
         <div class="row" >
-            <div class="col-md-4" *ngFor="let Mascota of myMascota">
-                <div class="card mb-4 shadow-sm">
-                    <img class="img-responsive" src="../../assets/{{Mascota.imagen}}">
+            <div class="col-md-3" *ngFor="let Mascota of myMascota">
+                <div class="card mb-4 shadow-sm" style="width: 25.4rem;">
+                    <img class="imagenes" src="../../assets/{{Mascota.imagen}}" style="-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;padding:0px" >
                     <div class="card-body">
-                        <p class="card-text"><strong>Mi nombre es: </strong> {{Mascota.nombre}}</p>
-                        <p class="card-text"><strong>Mi estatura es: </strong>{{Mascota.estatura}}</p>
-                        <p class="card-text"><strong>Mi edad es: </strong>{{Mascota.edad}}</p>
-                        <p class="card-text">{{Mascota.descripcion}}</p>
+                        <p class="d" ><strong>Mi nombre es: </strong> {{Mascota.nombre}}</p>
+                        <p class="d" ><strong>Mi estatura es: </strong>{{Mascota.estatura}}</p>
+                        <p class="d" ><strong>Mi edad es: </strong>{{Mascota.edad}}</p>
+                        <p class="d" ><strong>Mi sexo es: </strong>{{Mascota.sexo}}</p>
+                        <p class="p" >"{{Mascota.descripcion}}"</p>
                         <button (click)="adoptame(Mascota.id)" type="button" class="btn btn-info">¡Adoptame!</button>
                       
                     </div>

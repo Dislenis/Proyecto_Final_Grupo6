@@ -14,8 +14,8 @@ export class SolicitudesComponent implements OnInit {
   
   id:number;
   ngOnInit(): void {
-    this.getSolicitudAdopcion(),
-    this.eliminar(this.id)
+    this.getSolicitudAdopcion()
+    
   }
 
   

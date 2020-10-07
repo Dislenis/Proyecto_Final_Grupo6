@@ -22,12 +22,36 @@
        </nav>
      </div>
    </body>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br>
-     <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <form>
+   <div class="form-row">
+    <div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+      <label for="inputCity">Nombre mascota</label>
+      <input type="text" class="form-control" name="filtroMascota" placeholder="Nombre mascota..." [(ngModel)]="filtroMascota" (ngModelChange)="buscarAdopcion()">
+    </div>
+    <div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <label for="inputZip">Nombre usuario</label>
+        <input type="text" class="form-control" name="filtroUsuario" placeholder="Nombre usuario..." [(ngModel)]="filtroUsuario" (ngModelChange)="buscarAdopcion()">
+      </div>
+    <div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+      <label for="inputState">Estado</label>
+      <select class="form-control" name="filtroEstado" [(ngModel)]="filtroEstado" (ngModelChange)="buscarAdopcion()">
+        <option value=''>Todos</option>
+       <option value="Solicitada">Solicitada</option>
+        <option value="Aceptada">Aceptada</option>
+        <option value="Rechazada">Rechazada</option>
+        </select>
+    </div>
+    
+  </div>
+</form>
+   <br>
+   <br>
+  
 <div class="container">
     <div class="card">
         <div class="card-header">
@@ -37,18 +61,18 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <td class="table-primary" style="text-align:center" scope="col">ID</td>
-                        <th style="text-align:center" scope="col">ID_MASCOTA</th>
-                        <th style="text-align:center" scope="col">ID_USUARIO</th>
+                        <td  style="text-align:center" scope="col">ID</td>
+                        <th style="text-align:center" scope="col">NOMBRE MASCOTA</th>
+                        <th style="text-align:center" scope="col">NOMBRE USUARIO</th>
                         <th style="text-align:center" scope="col">ESTADO</th>
                     </tr>
                 </thead>
 
                 <tbody>      
                     <tr *ngFor="let adopcion of miAdopcion">
-                         <td class="table-primary" style="text-align:center">{{adopcion.id}}</td>
-                          <td style="text-align:center">{{adopcion.id_Mascota}}</td>
-                          <td style="text-align:center">{{adopcion.id_Usuario}}</td>
+                         <td  style="text-align:center">{{adopcion.id}}</td>
+                          <td style="text-align:center">{{adopcion.nombreMascota}}</td>
+                          <td style="text-align:center">{{adopcion.nombreUsuario}}</td>
                           <td style="text-align:center">{{adopcion.estado}}</td>
                           <td style="text-align:center"><button class="btn btn-primary" (click)= "eliminarAdopcion(adopcion.id);">Eliminar</button> </td>
                         

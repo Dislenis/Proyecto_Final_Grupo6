@@ -22,12 +22,28 @@
         </nav>
       </div>
     </body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <form>
+        <div class="form-row">
+          <div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-4 ">
+            <label for="inputEmail4">Nombre usuario</label>
+            <input type="text" class="form-control" name="filterUsuarios" placeholder="Introduzca aquí el nombre..." [(ngModel)]="filtroNombre" (ngModelChange)="buscar()">
+          </div>
+          <div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-4 ">
+            <label for="inputPassword4">Apellido usuario</label>
+            <input type="text" class="form-control" name="filterUsuarios" placeholder="Introduzca aquí el apellido..." [(ngModel)]="filtroApellido" (ngModelChange)="buscar()">
+          </div>
+        </div>
+    </form>
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
+  
     <div class="container">
         <div class="card">
             <div class="card-header">
@@ -38,8 +54,8 @@
                     <thead>
                         <tr>
                            
-                            <th class="table-primary" style="text-align:center" scope="col">NOMBRE</th>
-                            <th class="table-primary" style="text-align:center" scope="col">APELLIDO</th>
+                            <th  style="text-align:center" scope="col">NOMBRE</th>
+                            <th  style="text-align:center" scope="col">APELLIDO</th>
                             <th style="text-align:center" scope="col">CORREO</th>
                             <th style="text-align:center" scope="col">TELÉFNO</th>
                             <th style="text-align:center" scope="col">DESCRIPCIÓN</th>
@@ -47,8 +63,8 @@
                     </thead>
                     <tbody>      
                         <tr *ngFor="let sugerencias of miSugerencia">
-                              <td class="table-primary" style="text-align:center">{{sugerencias.nombre}}</td>
-                              <td class="table-primary" style="text-align:center">{{sugerencias.apellido}}</td>
+                              <td  style="text-align:center">{{sugerencias.nombre}}</td>
+                              <td  style="text-align:center">{{sugerencias.apellido}}</td>
                               <td style="text-align:center">{{sugerencias.correo}}</td>
                               <td style="text-align:center">{{sugerencias.telefono}}</td>
                               <td style="text-align:center">{{sugerencias.descripcion}}</td>

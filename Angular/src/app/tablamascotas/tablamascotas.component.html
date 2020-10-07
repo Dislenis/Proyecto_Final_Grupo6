@@ -1,4 +1,4 @@
-<p>tablamascotas works!</p>
+
 <body>
     <div class="item1">
        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
@@ -23,12 +23,29 @@
        </nav>
      </div>
    </body>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+ <br>
+ <br>
+     <div class="container">
+       
+        <div class="row">
+            
+            <div class="col">
+                <div class="form-group">
+                    <label>Nombre mascota</label>
+                    <input type="text" class="form-control" name="filterMascotas" placeholder="Introduzca nombre de la mascota..." [(ngModel)]="filterMascotas">
+                </div>
+            </div>
+        </div>
+       </div>
      <br>
      <br>
      <br>
-     <br>
-     <br>
-     <br>
+     
 <div class="container">
     <div class="card">
         <div class="card-header">
@@ -39,10 +56,10 @@
                 <thead>
                     <tr>
                         <td style="text-align:center" scope="col">ID</td>
-                        <th class="table-primary" style="text-align:center" scope="col">NOMBRE</th>
-                        <th style="text-align:center" scope="col">ESTATURA</th>
-                        <th style="text-align:center" scope="col">EDAD</th>
-                        <th class="table-primary" style="text-align:center" scope="col">SEXO</th>
+                        <th style="text-align:center" scope="col">NOMBRE</th>
+                        <th  scope="col">ESTATURA</th>
+                        <th scope="col">EDAD</th>
+                        <th style="text-align:center" scope="col">SEXO</th>
                         <th style="text-align:center" scope="col">REGIÓN</th>
                         <th style="text-align:center" scope="col">COMUNA</th>
                         <th style="text-align:center" scope="col">IMAGEN</th>
@@ -51,12 +68,12 @@
                 </thead>
 
                 <tbody>      
-                    <tr *ngFor="let mascotas of miMascota">
+                    <tr *ngFor="let mascotas of miMascota | filter:filterMascotas">
                          <td style="text-align:center">{{mascotas.id}}</td>
-                          <td class="table-primary" style="text-align:center">{{mascotas.nombre}}</td>
+                          <td  style="text-align:center">{{mascotas.nombre}}</td>
                           <td style="text-align:center">{{mascotas.estatura}}</td>
                           <td style="text-align:center">{{mascotas.edad}}</td>
-                          <td class="table-primary" style="text-align:center">{{mascotas.sexo}}</td>
+                          <td  style="text-align:center">{{mascotas.sexo}}</td>
                           <td style="text-align:center">{{mascotas.region}}</td>
                           <td style="text-align:center">{{mascotas.comuna}}</td>
                           <td style="text-align:center">{{mascotas.imagen}}</td>

@@ -18,10 +18,17 @@ public class AdopcionResource {
     private CorreoService correoService;
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //GET PARA MOSTRAR LISTA DE ADOPCIONES
     @RequestMapping(method = RequestMethod.GET)
     public List<Adopcion> listaAdopcion() {
         return AdopcionDAO.listaAdopcion();
+    }
+    //GET PARA MOSTRAR LISTA DE ADOPCIONES
+    @RequestMapping(method = RequestMethod.GET, value = "/lista")
+    public List<Adopcion> listaAdopcion(@RequestParam String nombreMascota, @RequestParam String nombreUsuario, @RequestParam String estado) {
+        nombreMascota = nombreMascota.replace("%20", "");
+        nombreUsuario = nombreUsuario.replace("%20", ""); //reemplaza
+        estado = estado.replace("%20", "");
+        return AdopcionDAO.listaAdopcion2(nombreMascota, nombreUsuario, estado);
     }
    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
    //POST PARA CREAR ADOPCION

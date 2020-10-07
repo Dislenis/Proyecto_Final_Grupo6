@@ -1,3 +1,7 @@
+<ngx-spinner
+ >
+  <img src='https://media.giphy.com/media/7792CoU4eXuoM/giphy.gif' />
+</ngx-spinner>
 <body>
     <div class="item1">
         <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
@@ -69,7 +73,7 @@
     
                             <div class="form-group">
                                 <div class="col-md-12 text-center">
-                                    <button (click)="crear()" type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button (click)="crear()" (click)="spinner()" type="submit" class="btn btn-primary btn-lg">Enviar</button>
                                 </div>
                             </div>
                         </fieldset>
@@ -77,7 +81,7 @@
                 </div>
             </div>
         </div>
-    </div>}
+    </div>
     <br>
     <br>
     </body>

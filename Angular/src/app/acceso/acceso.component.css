@@ -72,8 +72,9 @@ img{
 
 .carrusel{
   display:block;
-margin:auto;
-  width: 30%;
+  margin:auto;
+  width:250px;
+   height: 250px;
   border-radius: 2.5rem;
 }
 .container{
@@ -96,3 +97,27 @@ body {
   
 
  }
+
+ .imagenes{
+   width:252px;
+   height: 250px;
+ }
+
+ .p {
+  font: oblique bold 60% cursive;
+}
+
+.d {
+  font: 75% sans-serif;
+  
+}
+
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.card{
+  border-radius: 29px;
+}

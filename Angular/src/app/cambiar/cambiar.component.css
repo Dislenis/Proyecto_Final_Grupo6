@@ -113,3 +113,14 @@ body {
     border-radius: 2.5rem;
   }
   
+  .ojo{
+    float: right;
+      margin-top: -7px;
+  }
+  
+  .span-ojo{
+    font-size: 10px;
+      float: right;
+      margin-right: 5px;
+      margin-top: -3px;
+  }

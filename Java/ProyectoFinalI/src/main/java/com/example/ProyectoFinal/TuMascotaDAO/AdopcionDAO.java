@@ -1,6 +1,7 @@
 package com.example.ProyectoFinal.TuMascotaDAO;
 import com.example.ProyectoFinal.TuMascota.Adopcion;
 import com.example.ProyectoFinal.TuMascota.Usuario;
+import com.example.ProyectoFinal.TuMascota.UsuarioMascota;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -21,12 +22,38 @@ public class AdopcionDAO {
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //MOSTRAR LISTA DE ADOPCIONES
     public static List<Adopcion> listaAdopcion() {
         String sql = "SELECT * FROM Adopcion";
         List<Adopcion> adopciones = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(Adopcion.class));
         return adopciones;
     }
+    //MOSTRAR LISTA DE ADOPCIONES
+    public static List<Adopcion> listaAdopcion2(String nombreMascota, String nombreUsuario, String estado) {
+        String sql = "SELECT \n" +
+                "a.ID,\n" +
+                "m.Nombre as NombreMascota, \n" +
+                "u.Nombre as NombreUsuario, \n" +
+                "a.Estado \n" +
+                "FROM Adopcion a \n" +
+                "inner join mascota m on a.ID_Mascota = m.ID \n" +
+                "inner join usuario u on a.ID_Usuario  = u.ID\n" +
+                "where ((?='') or ( upper (m.Nombre) like upper (?))) AND \n" +
+                "((?='') or (upper (u.Nombre) like upper (?))) AND \n" +
+                "((?='') or (upper (a.Estado) = upper (?)))";
+        List<Adopcion> adopciones = jdbcTemplate.query(sql, new Object[]{nombreMascota, '%' + nombreMascota + '%', nombreUsuario, '%' + nombreUsuario + '%', estado, estado },(rs, rowNum) ->
+                new Adopcion(
+                        rs.getInt("ID"),
+                        rs.getString("Estado"),
+                        rs.getString("NombreMascota"),
+                        rs.getString("NombreUsuario")
+
+                ));
+
+        return adopciones;
+    };
+
+
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //CREAR REGISTRO PARA ADOPCION

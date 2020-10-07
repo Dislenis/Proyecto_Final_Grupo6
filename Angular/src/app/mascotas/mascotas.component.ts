@@ -35,7 +35,9 @@ export class MascotasComponent implements OnInit {
     this.getMascotaID(this.idMascota)
   }
 
-
+    id_Mascota : Number;
+    id_Usuario: Number;
+    estado: string;
 
      id: Number=0;
     Nombre: string;
@@ -90,6 +92,7 @@ export class MascotasComponent implements OnInit {
 
     }
   }
+  
   registraMascota(){
     location.href="mascotasr";
     
@@ -162,7 +165,9 @@ export class MascotasComponent implements OnInit {
        id: 0,
        id_Mascota : idMascota,
        id_Usuario: parseInt(idUsuario),
-       estado: ""
+       estado: "",
+       nombreMascota:"",
+       nombreUsuario:""
  
      }
   console.log(miAdopcion)
@@ -179,4 +184,5 @@ export class MascotasComponent implements OnInit {
      }
  
 }
+
   

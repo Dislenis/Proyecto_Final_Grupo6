@@ -130,7 +130,9 @@ registraMascota(){
       id: 0,
       id_Mascota : idMascota,
       id_Usuario: parseInt(idUsuario),
-      estado: ""
+      estado: "",
+      nombreMascota:"",
+      nombreUsuario:""
 
     }
  console.log(miAdopcion)

@@ -75,11 +75,10 @@
       <br>
       <br>
       <br>
-      <br>
-      <br>
-      <br>
       
-        <img class="img-responsive" src="/assets/mascota9.jpg" width="350" height="700" style="-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;padding:0px" >
+     
+      
+        <img class="img-responsive" src="/assets/holi.jpg" width="350" height="700" style="-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;padding:0px" >
         </div>
         </div>
         <br>
@@ -96,7 +95,7 @@
 
 
 
-    <div *ngIf="largo===1; else busqueda">
+    
       <div class="container perfil" *ngFor="let busqueda of miMascota">
         <div class="container-fluid bg-1 text-center">
             <img src="../../assets/{{busqueda.imagen}}" class="img-circle" alt="{{busqueda.descripcion}}" width="350" height="350">
@@ -121,27 +120,6 @@
 
   </div>
   
-  <ng-template #busqueda>
-    <div class="album py-5 bg-light">
-      <div class="container">
-
-          <div class="row" >
-              <div class="col-md-4" *ngFor="let busqueda of miMascota">
-                  <div class="card mb-4 shadow-sm">
-                      <img class="img-responsive" src="../../assets/{{busqueda.imagen}}">
-                      <div class="card-body">
-                          <p class="card-text"><strong>Mi nombre es: </strong>{{busqueda.nombre}}</p>
-                          <p class="card-text"><strong>De estatura: </strong>{{busqueda.estatura}}</p>
-                          <p class="card-text"><strong>Mi sexo es: </strong>{{busqueda.sexo}}</p>
-                          <p class="card-text">{{busqueda.descripcion}}</p>
-                          
-                          <button (click)="adoptame(busqueda.id)" type="button" class="btn btn-info">¡Adoptame!</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  </ng-template>
+ 
 
     

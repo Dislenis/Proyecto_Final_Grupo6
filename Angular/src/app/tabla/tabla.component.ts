@@ -15,8 +15,13 @@ export class TablaComponent implements OnInit {
 
 
   constructor(private usuarioService:UsuarioService,private router:Router) { }
+ 
 
   miUsuario: Usuario[]  = [];
+
+  filtroNombre:string='';
+  filtroApellido:string='';
+ 
   
 
   Nombre: String;
@@ -56,7 +61,15 @@ export class TablaComponent implements OnInit {
 ////////////////////////////////////////////////////////////////////////////////
   buscar() {
     console.log("se imprime")
-    this.usuarioService.getUsuario().subscribe(
+    let nombre = this.filtroNombre;
+    let apellido = this.filtroApellido;
+    if(nombre.trim() === ''){    //trim te saca los espacios
+       nombre = '%20'
+    }
+    if(apellido.trim() === ''){
+      apellido = '%20'
+    }
+    this.usuarioService.getUsuario(nombre, apellido).subscribe(
       usuario => this.miUsuario = usuario
     )
   }
@@ -65,6 +78,7 @@ export class TablaComponent implements OnInit {
   eliminar(correo:string){
     console.log(correo);
     this.usuarioService.deleteUsuario(correo).subscribe(data=> this.buscar());
+    alert('¿Seguro quiere eliminar al usuario?')
   }
   /////////////////////////////////////////////////////////////////////////////////
  

@@ -22,9 +22,25 @@ public class UsuarioDAO {
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //MOSTRAR LISTA COMPLETA USUARIOS
-    public static List<Usuario> list() {
-        String sqlConsulta = "SELECT * FROM Usuario";
-        List<Usuario> usuarios = jdbcTemplate.query(sqlConsulta, BeanPropertyRowMapper.newInstance(Usuario.class));
+    public static List<Usuario> list(String nombre, String apellido) {
+        String sqlConsulta = "select u.ID, u.Nombre, u.Apellido, u.Fecha, u.Genero, u.Correo, c.Comuna, r.Region from Usuario u \n" +
+                "                inner join Comunas c on u.ID_COMUNA = c.ID\n" +
+                "                inner join Regiones r on u.Region = r.ID \n" +
+                "                where ((?='')or (upper (u.Nombre) like upper (?))) and \n" +
+                "                ((?='')or (upper (u.Apellido) like upper (?)))";
+        List<Usuario> usuarios = jdbcTemplate.query(sqlConsulta, new Object[]{nombre, '%' + nombre + '%', apellido, '%' + apellido + '%'},(rs, rowNum) ->
+                new Usuario(
+                        rs.getInt("ID"),
+                        rs.getString("Nombre"),
+                        rs.getString("Apellido"),
+                        rs.getString("Correo"),
+                        rs.getDate("Fecha"),
+                        rs.getString("Genero"),
+                        rs.getString("Region"),
+                        rs.getString("Comuna")
+
+                ));
+
         return usuarios;
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

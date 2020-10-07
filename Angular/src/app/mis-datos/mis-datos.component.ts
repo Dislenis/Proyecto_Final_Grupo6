@@ -33,7 +33,7 @@ export class MisDatosComponent implements OnInit {
 
   MisDatos: Usuario[] = []
 
-
+ 
 
   columnasTabla: String[] = [
     "id",

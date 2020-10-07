@@ -26,6 +26,11 @@ import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { TablamascotasComponent } from './tablamascotas/tablamascotas.component';
 import { TablaadopcionesComponent } from './tablaadopciones/tablaadopciones.component';
 import { TablasugerenciaComponent } from './tablasugerencia/tablasugerencia.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { FilterPipe } from './pipes/filter.pipe';
+import {MatInputModule} from '@angular/material/input';
+
+
 
 
 
@@ -49,6 +54,7 @@ import { TablasugerenciaComponent } from './tablasugerencia/tablasugerencia.comp
     TablamascotasComponent,
     TablaadopcionesComponent,
     TablasugerenciaComponent,
+    FilterPipe,
 
    
     
@@ -61,6 +67,10 @@ import { TablasugerenciaComponent } from './tablasugerencia/tablasugerencia.comp
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxSpinnerModule,
+    MatInputModule
+   
+ 
     
 
 

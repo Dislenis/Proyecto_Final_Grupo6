@@ -95,3 +95,20 @@ h1 {
     border-radius: 2.5rem;
   }
   
+  .spinner{
+    position:absolute;
+    top:50px;
+    left:50px;
+    transform:translate(-50%, -50%);
+  }
+
+  .ojo{
+    float: right;
+      margin-top: -5px;
+  }
+  
+  .span-ojo{
+    font-size: 10px;
+      float: right;
+      margin-right: 5px;
+  }

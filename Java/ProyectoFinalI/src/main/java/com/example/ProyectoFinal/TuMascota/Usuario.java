@@ -48,6 +48,18 @@ public class Usuario {
         this.Genero = Genero;
     }
 
+    public Usuario(int ID, String nombre, String apellido, String correo, Date fecha, String genero, String region, String comuna) {
+
+        this.ID = ID;
+        Nombre = nombre;
+        Apellido = apellido;
+        Correo = correo;
+        Fecha = fecha;
+        Genero = genero;
+        Region = region;
+        Comuna = comuna;
+    }
+
     //Getters y Setters
 
 

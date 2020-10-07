@@ -34,9 +34,13 @@ public class Adopcion {
         this.nombreUsuario = nombreUsuario;
         this.Apellido = apellido;
         this.correo = correo;
+    }
 
-
-
+    public Adopcion(int ID, String estado, String nombreMascota, String nombreUsuario) {
+        this.ID = ID;
+        Estado = estado;
+        this.nombreMascota = nombreMascota;
+        this.nombreUsuario = nombreUsuario;
     }
 
     public int getID() {

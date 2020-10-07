@@ -10,8 +10,10 @@ import { Router } from '@angular/router';
 export class TablasugerenciaComponent implements OnInit {
 
   constructor(private usuarioService:UsuarioService,private router:Router) { }
-
-
+  
+  filtroNombre:string='';
+  filtroApellido:string='';
+  
   miSugerencia: Sugerencia[] = [];
   ngOnInit(): void {
     this.buscar()
@@ -35,14 +37,25 @@ columnasTabla: String[] = [
 
 buscar() {
   console.log("se imprime")
-  this.usuarioService.getSugerencia().subscribe(
+  let nombre = this.filtroNombre;
+  let apellido = this.filtroApellido;
+  if(nombre.trim() === ''){    //trim te saca los espacios
+     nombre = '%20'
+  }
+  if(apellido.trim() === ''){
+    apellido = '%20'
+  }
+  this.usuarioService.getSugerencia(nombre, apellido).subscribe(
     sugerencia => this.miSugerencia = sugerencia
   )
 }
 
+
+
 eliminar(correo:string){
   console.log(correo);
   this.usuarioService.deleteSugerencia(correo).subscribe(data=> this.buscar());
+  alert('¿Seguro quiere eliminar este mensaje?')
 }
   cerrarSesion(){
     location.href="#"

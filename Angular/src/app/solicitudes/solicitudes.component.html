@@ -37,24 +37,24 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th class="table-primary">MASCOTA</th>
+                        <th >MASCOTA</th>
                         <th>ESTATURA</th>
                         <th>EDAD </th>
                         <th>SEXO</th>
-                        <th class="table-primary">ADOPTANTE</th>
-                        <th class="table-primary">APELLIDO</th>
+                        <th >ADOPTANTE</th>
+                        <th>APELLIDO</th>
                         <th>CORREO</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let adp of adopcion" style="color:black">
                     
-                        <td class="table-primary">{{adp.nombreMascota}}</td>
+                        <td >{{adp.nombreMascota}}</td>
                         <td>{{adp.estatura}}</td>
                         <td>{{adp.edad}}</td>
                         <td>{{adp.sexo}}</td>
-                        <td class="table-primary">{{adp.nombreUsuario}}</td>
-                        <td class="table-primary">{{adp.apellido}}</td>
+                        <td>{{adp.nombreUsuario}}</td>
+                        <td >{{adp.apellido}}</td>
                         <td>{{adp.correo}}</td>
                         <td style="text-align:center">
                         <button class="btn btn-primary" (click)="aceptarSolicitud(adp.id)">Aceptar</button>

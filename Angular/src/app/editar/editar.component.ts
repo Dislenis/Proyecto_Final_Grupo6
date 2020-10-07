@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../User/usuario'
 import { Router } from '@angular/router';
 import { UsuarioService } from '../servicios/usuario.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-editar',
@@ -10,11 +11,12 @@ import { UsuarioService } from '../servicios/usuario.service';
 })
 export class EditarComponent implements OnInit {
 
-  constructor(private usuarioService:UsuarioService, private router: Router) { }
+  constructor(private usuarioService:UsuarioService, private router: Router, private spinnerService: NgxSpinnerService) { }
 
   ngOnInit(): void {
-
-    this.verificar()
+   this.verificar();
+  
+   
   }
   correo:string;
   miUsuario: Usuario[] = [];
@@ -61,4 +63,12 @@ export class EditarComponent implements OnInit {
     )
 
   }
+  spinner():void{
+    this.spinnerService.show();
+    setTimeout(() =>{
+      this.spinnerService.hide();
+    },4000);
+  }
+
+ 
 }

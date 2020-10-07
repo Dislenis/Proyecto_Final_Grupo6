@@ -95,4 +95,12 @@ body {
   color: black;
   
 
- }
+}
+
+.form-row{
+  
+  padding-left: 450px;
+  padding-right: 200px;
+  width: 100%;
+  
+}

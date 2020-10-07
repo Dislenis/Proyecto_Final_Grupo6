@@ -14,7 +14,8 @@ export class TablamascotasComponent implements OnInit {
 
   constructor(private usuarioService:UsuarioService,private router:Router) { }
   miMascota: Mascota[] = [];
-
+  filterMascotas ='';
+  
   ngOnInit(): void {
     this.buscarMascota()
     
@@ -50,6 +51,7 @@ export class TablamascotasComponent implements OnInit {
     eliminarMascota(id:Number){
       console.log(id);
       this.usuarioService.deleteMascota(id).subscribe(data=> this.buscarMascota());
+      alert('¿Seguro quiere eliminar a la mascota?')
     }
 
     cerrarSesion(){

@@ -50,6 +50,7 @@ export class UsuarioService {
   
   //ADOPCION
   private adopcionURL: string = 'http://localhost:8080/adopcion'; //mostar ADOPCION
+  private adopcion:string = '/lista';
   private crearAdopcionURL: string = '/crearAdopcion';
   private eliminarAdopcionURL = '/eliminarAdopcion/';
   private listarAdopcionURL = '/solicitudes/';
@@ -62,8 +63,11 @@ export class UsuarioService {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  
 //USUARIO
-  getUsuario(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(this.usuarioURL) //mostrar la tabla USUARIO
+  getUsuario(nombre:string, apellido:string): Observable<Usuario[]> {
+    let params = new HttpParams()
+    .set('nombre', nombre)
+    .set('apellido', apellido);
+    return this.http.get<Usuario[]>(this.usuarioURL,{params:params}) //mostrar la tabla USUARIO
   }
 
   crearUsuario(usuario: Usuario){
@@ -150,10 +154,20 @@ export class UsuarioService {
   }
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //ADOPCION
+
   getAdopcion(): Observable<any>{
     return this.http.get<any>(this.adopcionURL) // lista ADOPCION
   }
+  
+  getAdopcion2(nombreMascota:string, nombreUsuario:string, estado:string): Observable<any>{
+    let params = new HttpParams()
+    .set('nombreMascota', nombreMascota)
+    .set('nombreUsuario', nombreUsuario)
+    .set('estado', estado)
+    return this.http.get<any>(this.adopcionURL + this.adopcion,{params:params}) // lista ADOPCION
+  }
 
+  
   postAdopcion(adopcion: Adopcion): Observable<Adopcion>{
     return this.http.post<Adopcion>(`${this.adopcionURL+this.crearAdopcionURL}`,adopcion, this.httpOptions)//crear ADOPCION
   }
@@ -175,10 +189,13 @@ export class UsuarioService {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   //SUGERENCIA
 
-  getSugerencia(): Observable<Sugerencia[]> {
-    return this.http.get<Sugerencia[]>(this.sugerenciaURL) //mostrar la tabla Sugerencias
+  getSugerencia(nombre:string, apellido:string): Observable<Sugerencia[]> {
+    let params = new HttpParams()
+    .set('nombre', nombre)
+    .set('apellido', apellido);
+    return this.http.get<Sugerencia[]>(this.sugerenciaURL,{params:params}) //mostrar la tabla Sugerencias
   }
-
+  
   crearSugerencia(sugerencia: Sugerencia){
     return this.http.post<Sugerencia>(`${this.sugerenciaURL+this.crearSugerenciaURL}`,sugerencia, this.httpOptions) //crear USUARIO
   }

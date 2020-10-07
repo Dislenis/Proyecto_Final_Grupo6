@@ -70,10 +70,13 @@ img{
 }
 
 .carrusel{
-  display:block;
-margin:auto;
-  width: 30%;
-  border-radius: 2.5rem;
+ 
+    display:block;
+    margin:auto;
+    width:250px;
+     height: 250px;
+    border-radius: 2.5rem;
+  
 }
 .container{
   border-radius: 2.5rem;
@@ -91,3 +94,55 @@ body {
   
 
  }
+
+ .imagenes{
+  width:252px;
+  height: 250px;
+}
+
+.p {
+ font: oblique bold 60% cursive;
+}
+
+.d {
+ font: 75% sans-serif;
+ 
+}
+
+.card{
+  border-radius: 29px;
+}
+.responsive {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.ojo{
+  float: right;
+  margin-right: 3px;
+    margin-top: -1px;
+}
+
+.span-ojo{
+  font-size: 10px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 4px;
+}
+
+.boton-ingreso{
+  margin-top: 15px;
+  width: 95%;
+  height: 50px;
+}
+
+.boton-registro{
+  margin-top: 1px;
+  width: 43%;
+}
+
+.boton-contraseña{
+  margin-top: 1px;
+  width: 50%;
+}

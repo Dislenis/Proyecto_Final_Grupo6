@@ -87,3 +87,8 @@ color: black;
 
 }
 
+@media screen and (max-width: 650px){
+  .map{
+    display: contents;
+  }
+}

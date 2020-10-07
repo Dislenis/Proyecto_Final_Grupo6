@@ -5,7 +5,7 @@ import { Region } from '../User/region';
 import { Provincia } from '../User/provincia';
 import { Comuna } from '../User/comuna';
 import { HttpClient } from '@angular/common/http';
-
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-mascotas-r',
   templateUrl: './mascotas-r.component.html',
@@ -13,14 +13,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MascotasRComponent implements OnInit {
 
-  constructor(private usuarioService: UsuarioService, private httpClient: HttpClient) { }
+  constructor(private usuarioService: UsuarioService, private httpClient: HttpClient,  private spinnerService: NgxSpinnerService) { }
 
   myRegion: Region[];
   myComuna: Comuna[];
   message: string;
 
   ngOnInit(): void {
-    this.buscarRegion()
+    this.buscarRegion();
     
  
   }
@@ -35,6 +35,7 @@ export class MascotasRComponent implements OnInit {
     descripcion: string;
     id_Comunas: Number;
     selectedFile: any = File;
+    
    
     
 
@@ -66,6 +67,7 @@ export class MascotasRComponent implements OnInit {
       region: this.Region,
       comuna: this.comuna,
       id_Comunas: this.id_Comunas,
+     
      
      
 
@@ -145,6 +147,13 @@ cerrarSesion(){
   location.href = "#";
 }
 
+
+spinner():void{
+  this.spinnerService.show();
+  setTimeout(() =>{
+    this.spinnerService.hide();
+  },2000);
+}
 }
 
 

@@ -3,6 +3,7 @@ import { Usuario } from '../User/usuario'
 import { Sugerencia } from '../User/sugerencia';
 import { UsuarioService } from '../servicios/usuario.service'
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-sugerencia',
@@ -11,9 +12,10 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class SugerenciaComponent implements OnInit {
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService, private spinnerService: NgxSpinnerService) { }
 
   ngOnInit(): void {
+   
   }
 
   
@@ -46,6 +48,7 @@ export class SugerenciaComponent implements OnInit {
       res => {
         alert("Se ha enviado su mensaje correctamente")
         console.log(res)
+        location.href='acceso'
       },
       err => {
         alert("No se ha podido procesar el mensaje")
@@ -63,5 +66,11 @@ export class SugerenciaComponent implements OnInit {
   registraMascota(){
     location.href="mascotasr";
     
+  }
+  spinner():void{
+    this.spinnerService.show();
+    setTimeout(() =>{
+      this.spinnerService.hide();
+    },4000);
   }
 }

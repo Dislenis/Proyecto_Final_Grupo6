@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Usuario } from '../User/usuario'
 import { Router } from '@angular/router';
 import { UsuarioService } from '../servicios/usuario.service';
 import { Comuna } from '../User/comuna';
 import { Region } from '../User/region';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-editar-perfil',
   templateUrl: './editar-perfil.component.html',
@@ -11,7 +12,7 @@ import { Region } from '../User/region';
 })
 export class EditarPerfilComponent implements OnInit {
 
-  constructor(private usuarioService:UsuarioService, private router: Router) { }
+  constructor(private usuarioService:UsuarioService, private router: Router, private spinnerService: NgxSpinnerService) { }
 
   myRegion: Region[] = [];
 
@@ -23,8 +24,9 @@ export class EditarPerfilComponent implements OnInit {
   
   datos: any;
   ngOnInit(): void {
-    this.buscarRegion(),
-    this.editar()
+    this.buscarRegion();
+    this.editar();
+    
   }
 
   ID: Number;
@@ -137,8 +139,28 @@ export class EditarPerfilComponent implements OnInit {
       location.href="#"
     }
   
+    spinner():void{
+      this.spinnerService.show();
+      setTimeout(() =>{
+        this.spinnerService.hide();
+      },2000);
+    }
   
+    show = false;
+  hide=true;
+  @ViewChild('showhideinput') input:ElementRef; ;
   
+  toggleShow()
+    {
+      if(this.input.nativeElement.type=='text'){
+        this.input.nativeElement.type='password';
+      }else{
+        this.input.nativeElement.type='text';
+      }
+      
+    
+ 
+  }
   }
   
 

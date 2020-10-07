@@ -48,3 +48,16 @@ body {
   width:170%;
   font-size:170%;
 }
+.imagenes{
+  width:252px;
+  height: 250px;
+}
+
+.p {
+ font: oblique bold 60% cursive;
+}
+
+.d {
+ font: 75% sans-serif;
+ 
+}
